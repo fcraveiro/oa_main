@@ -1,40 +1,35 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oa_fone/oa_fone.dart';
 
-//import 'modal.dart';
-
 class Paciente extends StatefulWidget {
-  const Paciente({
-    Key? key,
-    required this.filteredPacientes,
-    required this.index,
-  }) : super(key: key);
+  const Paciente(
+      {Key? key, required this.filteredPacientes, required this.indexa})
+      : super(key: key);
 
-//  final ClassPaciente post;
   final List filteredPacientes;
-  final int index;
+  final int indexa;
 
   @override
-  _PacienteState createState() => _PacienteState();
+  State<Paciente> createState() => _PacienteState();
 }
 
-List filteredPacientes = [];
+List xfilteredPacientes = [];
 int index = 0;
 
 class _PacienteState extends State<Paciente> {
   @override
   void initState() {
-//    log(widget.filteredPacientes.toString());
+//    log(widget.xfilteredPacientes.toString());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    filteredPacientes = widget.filteredPacientes;
-    index = widget.index;
+    xfilteredPacientes = widget.filteredPacientes;
+//    log('INDEX = ${widget.index.toString()}');
+    index = widget.indexa;
 
     return Scaffold(
 //      backgroundColor: Colors.deepOrange,
@@ -58,7 +53,7 @@ class _PacienteState extends State<Paciente> {
             const SizedBox(
               width: 10,
             ),
-            filteredPacientes[index].pacFavorito
+            xfilteredPacientes[index].pacFavorito
                 ? const FaIcon(
                     FontAwesomeIcons.solidHeart,
                     size: 16,
@@ -73,10 +68,10 @@ class _PacienteState extends State<Paciente> {
                 onTap: () => {
                   ligarContato(
                     context,
-                    filteredPacientes[index].pacFone,
-                    filteredPacientes[index].pacCel,
-                    filteredPacientes[index].pacZap1,
-                    filteredPacientes[index].pacZap2,
+                    xfilteredPacientes[index].pacFone,
+                    xfilteredPacientes[index].pacCel,
+                    xfilteredPacientes[index].pacZap1,
+                    xfilteredPacientes[index].pacZap2,
                   ),
                 },
                 child: Container(
@@ -136,7 +131,7 @@ class _PacienteState extends State<Paciente> {
                   top: 10,
                   left: 20,
                   child: Text(
-                    filteredPacientes[index].pacNome.toString(),
+                    xfilteredPacientes[index].pacNome.toString(),
                     style: GoogleFonts.lato(
                       color: Colors.white,
                       fontSize: 18,
@@ -149,7 +144,7 @@ class _PacienteState extends State<Paciente> {
                   top: 38,
                   left: 20,
                   child: Text(
-                    filteredPacientes[index].pacFone.toString(),
+                    xfilteredPacientes[index].pacFone.toString(),
                     style: GoogleFonts.lato(
                       color: Colors.white,
                       fontSize: 14,
@@ -168,47 +163,47 @@ class _PacienteState extends State<Paciente> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                        'UuID               ${filteredPacientes[index].pacUuId.toString()}'),
+                        'UuID               ${xfilteredPacientes[index].pacUuId.toString()}'),
                     Text(
-                        'Dentista         ${filteredPacientes[index].pacDentista.toString()}'),
+                        'Dentista         ${xfilteredPacientes[index].pacDentista.toString()}'),
                     Text(
-                        'Nome             ${filteredPacientes[index].pacNome.toString()}'),
+                        'Nome             ${xfilteredPacientes[index].pacNome.toString()}'),
                     Text(
-                        'Endereço       ${filteredPacientes[index].pacEnde.toString()}'),
+                        'Endereço       ${xfilteredPacientes[index].pacEnde.toString()}'),
                     Text(
-                        'Cidade           ${filteredPacientes[index].pacCity.toString()}'),
+                        'Cidade           ${xfilteredPacientes[index].pacCity.toString()}'),
                     Text(
-                        'Estado           ${filteredPacientes[index].pacEst.toString()}'),
+                        'Estado           ${xfilteredPacientes[index].pacEst.toString()}'),
                     Text(
-                        'Cep                ${filteredPacientes[index].pacCep.toString()}'),
+                        'Cep                ${xfilteredPacientes[index].pacCep.toString()}'),
                     Text(
-                        'Fone              ${filteredPacientes[index].pacFone.toString()}'),
+                        'Fone              ${xfilteredPacientes[index].pacFone.toString()}'),
                     Text(
-                        'Celular           ${filteredPacientes[index].pacCel.toString()}'),
+                        'Celular           ${xfilteredPacientes[index].pacCel.toString()}'),
                     Text(
-                        'Zap1               ${filteredPacientes[index].pacZap1.toString()}'),
+                        'Zap1               ${xfilteredPacientes[index].pacZap1.toString()}'),
                     Text(
-                        'Zap2               ${filteredPacientes[index].pacZap2.toString()}'),
+                        'Zap2               ${xfilteredPacientes[index].pacZap2.toString()}'),
                     Text(
-                        'Favorito          ${filteredPacientes[index].pacFavorito.toString()}'),
+                        'Favorito          ${xfilteredPacientes[index].pacFavorito.toString()}'),
                     Text(
-                        'Tratando        ${filteredPacientes[index].pacTratando.toString()}'),
+                        'Tratando        ${xfilteredPacientes[index].pacTratando.toString()}'),
                     Text(
-                        'Remarcado    ${filteredPacientes[index].pacRemarcado.toString()}'),
+                        'Remarcado    ${xfilteredPacientes[index].pacRemarcado.toString()}'),
                     Text(
-                        'Completo       ${filteredPacientes[index].pacCompleto.toString()}'),
+                        'Completo       ${xfilteredPacientes[index].pacCompleto.toString()}'),
                     Text(
-                        'Aviso 1           ${filteredPacientes[index].pacAviso1.toString()}'),
+                        'Aviso 1           ${xfilteredPacientes[index].pacAviso1.toString()}'),
                     Text(
-                        'Aviso 2           ${filteredPacientes[index].pacAviso2.toString()}'),
+                        'Aviso 2           ${xfilteredPacientes[index].pacAviso2.toString()}'),
                     Text(
-                        'Aviso 3           ${filteredPacientes[index].pacAviso3.toString()}'),
+                        'Aviso 3           ${xfilteredPacientes[index].pacAviso3.toString()}'),
                     Text(
-                        'Aviso 4           ${filteredPacientes[index].pacAviso4.toString()}'),
+                        'Aviso 4           ${xfilteredPacientes[index].pacAviso4.toString()}'),
                     Text(
-                        'Aviso 5           ${filteredPacientes[index].pacAviso5.toString()}'),
+                        'Aviso 5           ${xfilteredPacientes[index].pacAviso5.toString()}'),
                     Text(
-                        'Aviso 6           ${filteredPacientes[index].pacAviso6.toString()}'),
+                        'Aviso 6           ${xfilteredPacientes[index].pacAviso6.toString()}'),
                   ],
                 ),
               ),
@@ -219,4 +214,3 @@ class _PacienteState extends State<Paciente> {
     );
   }
 }
-*/

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oa_main/inicio.dart';
 import 'package:oa_main/menu.dart';
+import 'package:oa_main/paginas/pacientes/paciente.dart';
 import 'package:oa_main/paginas/pacientes/pacientes.dart';
 import 'package:oa_main/unknowpage.dart';
 
@@ -53,8 +54,21 @@ class MyApp extends StatelessWidget {
             name: '/pacientes/',
             page: () => const Pacientes(),
             transition: Transition.zoom),
+        GetPage(
+            name: '/paciente/',
+            page: () => Paciente(
+                  filteredPacientes: filteredPacientes,
+                  indexa: indexa,
+                ),
+            transition: Transition.zoom),
 
 /*
+
+
+                  filteredPacientes: filteredPacientes,
+                  index: null,
+
+
         GetPage(
             name: '/pagina2/',
             page: () => Pagina2(

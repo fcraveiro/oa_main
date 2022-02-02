@@ -1,6 +1,5 @@
 import 'dart:developer';
-import 'package:oa_main/menu.dart';
-import 'package:oa_main/services/bouncypage.dart';
+import 'package:get/get.dart';
 import 'package:oa_main/services/conectar.dart';
 import 'package:oa_main/services/config.dart';
 import '/model/pacientes.dart';
@@ -29,6 +28,8 @@ List filteredPacientes = [];
 int userDentista = 0;
 final box = GetStorage();
 String fotoAtual = '';
+
+int indexa = 0;
 
 Color corEscolha1 = const Color(0xFF48426D);
 Color corEscolha2 = const Color(0xFF48426D);
@@ -332,16 +333,21 @@ class _PacientesState extends State<Pacientes> {
       children: [
         InkWell(
           onTap: () {
+            indexa = index;
+            Get.toNamed("/paciente/");
+
+/*
             log('Clicado 2');
             Navigator.push(
               context,
               BouncyPageRoute(
-//                  widget: Paciente(
-//                      filteredPacientes: filteredPacientes, index: index),
+                  widget: Paciente(
+                      filteredPacientes: filteredPacientes, index: index),
 
                 widget: const Menu(),
               ),
             );
+*/
           },
           child: Stack(
             children: [

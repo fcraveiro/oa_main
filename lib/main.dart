@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oa_main/inicio.dart';
 import 'package:oa_main/menu.dart';
+import 'package:oa_main/paginas/pacientes/pacientes.dart';
 import 'package:oa_main/unknowpage.dart';
 
 void main() async {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarColor: Color(0xFF7B1FA2),
+        statusBarColor: Color(0xFF48426D),
       ),
     );
 
@@ -47,6 +48,10 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/menu/',
             page: () => const Menu(),
+            transition: Transition.zoom),
+        GetPage(
+            name: '/pacientes/',
+            page: () => const Pacientes(),
             transition: Transition.zoom),
 
 /*

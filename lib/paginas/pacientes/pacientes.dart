@@ -3,7 +3,6 @@ import 'package:oa_main/menu.dart';
 import 'package:oa_main/services/bouncypage.dart';
 import 'package:oa_main/services/conectar.dart';
 import 'package:oa_main/services/config.dart';
-
 import '/model/pacientes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -12,7 +11,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oa_fone/oa_fone.dart';
 import 'package:supabase/supabase.dart';
-// Paginas
 import 'controle_pacientes.dart';
 
 class Pacientes extends StatefulWidget {
@@ -30,6 +28,7 @@ int selecionados = 0;
 List filteredPacientes = [];
 int userDentista = 0;
 final box = GetStorage();
+String fotoAtual = '';
 
 Color corEscolha1 = const Color(0xFF48426D);
 Color corEscolha2 = const Color(0xFF48426D);
@@ -45,6 +44,16 @@ class _PacientesState extends State<Pacientes> {
       box.write('dentistaAtual', 1);
     }
     userDentista = box.read('dentistaAtual');
+    if (userDentista == 1) {
+      fotoAtual = 'gabi';
+    }
+    if (userDentista == 2) {
+      fotoAtual = 'vera';
+    }
+    if (userDentista == 3) {
+      fotoAtual = 'regina';
+    }
+
     lista = [];
     limpaPesquisa();
     lerAgora();
@@ -183,29 +192,24 @@ class _PacientesState extends State<Pacientes> {
 
                   */
                 child: Container(
-                  width: 45,
-                  height: 40,
+                  width: 41,
+                  height: 38,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      12,
-                    ),
-                    border: Border.all(
-                      color: const Color(0xFF757575),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      FaIcon(
-                        FontAwesomeIcons.plus,
-                        size: 16,
+                      borderRadius: BorderRadius.circular(
+                        12,
                       ),
-                    ],
-                  ),
+                      image: DecorationImage(
+                        image: ExactAssetImage('assets/imagens/$fotoAtual.png'),
+                        fit: BoxFit.cover,
+                      ),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 1,
+                      )),
                 ),
               ),
               const SizedBox(
-                width: 15,
+                width: 17,
               ),
             ],
           )

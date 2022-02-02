@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oa_main/inicio.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -35,27 +35,20 @@ class _MenuState extends State<Menu> {
         child: Column(
           children: [
             const SizedBox(
-              height: 90,
-            ),
-            Text(
-              'Dentista',
-              style: GoogleFonts.nunito(
-                  fontSize: 20, letterSpacing: .1, fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(
-              height: 45,
+              height: 120,
             ),
             ElevatedButton(
-              style: const ButtonStyle(),
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Inicio(),
-                  ),
-                );
+                Get.toNamed("/pacientes/");
               },
               child: Text(
-                dentistaAtual.toString(),
+                'Pacientes',
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),

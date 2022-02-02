@@ -65,57 +65,15 @@ class _PacientesState extends State<Pacientes> {
     super.initState();
   }
 
-  lerAgora3() async {
-    log('future');
-    FutureBuilder(
-      future: conectar.getAll2(),
-      builder:
-          (BuildContext context, AsyncSnapshot<List<ClassPaciente>> snapshot) {
-        if (snapshot.hasData) {
-          log('caralho');
-          List<ClassPaciente>? lista = snapshot.data;
-          log(lista.toString());
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
-        throw 'erro';
-      },
-    );
-  }
-
-  Future lerAgora2() async {
-    FutureBuilder(
-      future: conectar.getAll2(),
-      builder:
-          (BuildContext context, AsyncSnapshot<List<ClassPaciente>> snapshot) {
-        if (snapshot.connectionState == ConnectionState.none) {
-          log('Sem Conexão');
-        } else if (snapshot.connectionState == ConnectionState.waiting) {
-          log('Aguardando Dados');
-        } else if (snapshot.hasError) {
-          log('Erro de Leitura');
-        } else if (snapshot.hasData) {
-          log('dados');
-          log(snapshot.data.toString());
-        }
-        throw 'erro';
-      },
-    );
-    setState(() {});
-  }
-
   Future<List<ClassPaciente>> lerAgora() async {
-//    log('Lendo ....');
     final response = await client
         .from('pacientes')
         .select()
         .eq('pacDentista', userDentista)
         .order('pacNome', ascending: true)
         .execute();
-//    log(lista.toString());
     if (response.error == null) {
       final dataList = response.data as List;
-//      log(dataList.length.toString());
       for (var i = 0; i < dataList.length; i++) {
         var evento = (ClassPaciente.fromJson(dataList[i]));
         lista.add(
@@ -155,7 +113,6 @@ class _PacientesState extends State<Pacientes> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-//      backgroundColor: const Color(0xFF373258),
       appBar: AppBar(
         elevation: 0,
         title: Text(
@@ -169,44 +126,21 @@ class _PacientesState extends State<Pacientes> {
         actions: [
           Row(
             children: [
-              GestureDetector(
-                onTap: () => {
-/*
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AddPaciente(),
-                      )
-                      
-                      
-                      
-                      ),
-
-*/
-                },
-/*
-                  FocusScope.of(context).requestFocus(FocusNode()),
-                  limpaPesquisa(),
-                  mostraTodos(),
-                  setState(() {}),
-
-                  */
-                child: Container(
-                  width: 41,
-                  height: 38,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        12,
-                      ),
-                      image: DecorationImage(
-                        image: ExactAssetImage('assets/imagens/$fotoAtual.png'),
-                        fit: BoxFit.cover,
-                      ),
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 1,
-                      )),
-                ),
+              Container(
+                width: 41,
+                height: 38,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      12,
+                    ),
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/imagens/$fotoAtual.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 1,
+                    )),
               ),
               const SizedBox(
                 width: 17,
@@ -217,7 +151,6 @@ class _PacientesState extends State<Pacientes> {
         centerTitle: true,
         backgroundColor: const Color(0xFF48426D),
       ),
-
       body: Center(
         heightFactor: 1,
         child: Column(
@@ -271,7 +204,7 @@ class _PacientesState extends State<Pacientes> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text('nçao tem'),
+                        const Text('Nada encontrado'),
 //                        LottieBuilder.asset('assets/imagens/notfound.json'),
                       ],
                     )
@@ -394,8 +327,6 @@ class _PacientesState extends State<Pacientes> {
     );
   }
 
-//  exibe() {}
-
   mostra2(index) {
     return Column(
       children: [
@@ -439,7 +370,6 @@ class _PacientesState extends State<Pacientes> {
                   ),
                 ),
               ),
-              //////////////////////////////////////////////////////////////////
               Positioned(
                 top: 33,
                 left: 10,
@@ -479,7 +409,6 @@ class _PacientesState extends State<Pacientes> {
                   ),
                 ),
               ),
-
               Positioned(
                 top: 10,
                 right: 10,

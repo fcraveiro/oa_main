@@ -12,7 +12,6 @@ class Inicio extends StatefulWidget {
 }
 
 final box = GetStorage();
-int dentistaAtual = 1;
 
 class _InicioState extends State<Inicio> {
   @override
@@ -61,27 +60,9 @@ class _InicioState extends State<Inicio> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      InkWell(
-                        onTap: () {
-                          box.write('dentistaAtual', 1);
-                          Get.toNamed("/menu/");
-                        },
-                        child: fotosEntrada('gabi'),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          box.write('dentistaAtual', 2);
-                          Get.toNamed("/menu/");
-                        },
-                        child: fotosEntrada('vera'),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          box.write('dentistaAtual', 3);
-                          Get.toNamed("/menu/");
-                        },
-                        child: fotosEntrada('regina'),
-                      ),
+                      fotosEntrada('gabi', 1),
+                      fotosEntrada('vera', 2),
+                      fotosEntrada('regina', 3),
                     ],
                   ),
                 ),
@@ -95,23 +76,29 @@ class _InicioState extends State<Inicio> {
     );
   }
 
-  fotosEntrada(String foto) {
-    return Container(
-      width: 90,
-      height: 90,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/imagens/$foto.png'),
-        ),
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.4),
-            spreadRadius: 2,
-            blurRadius: 7,
-            offset: const Offset(3, 6), // changes position of shadow
+  fotosEntrada(String foto, int valor) {
+    return InkWell(
+      onTap: () {
+        box.write('dentistaAtual', valor);
+        Get.toNamed("/menu/");
+      },
+      child: Container(
+        width: 90,
+        height: 90,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/imagens/$foto.png'),
           ),
-        ],
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.4),
+              spreadRadius: 2,
+              blurRadius: 7,
+              offset: const Offset(3, 6), // changes position of shadow
+            ),
+          ],
+        ),
       ),
     );
   }

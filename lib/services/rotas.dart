@@ -5,6 +5,8 @@ import 'package:oa_main/paginas/pacientes/addpaciente.dart';
 import 'package:oa_main/paginas/pacientes/gravapacientes.dart';
 import 'package:oa_main/paginas/pacientes/paciente.dart';
 import 'package:oa_main/paginas/pacientes/pacientes.dart';
+import 'package:oa_main/testes/foto.dart';
+import 'package:oa_main/testes/fotos2.dart';
 
 rotas() {
   return [
@@ -34,6 +36,17 @@ rotas() {
         name: '/gravapaciente/',
         page: () => GravaPaciente(
               form: formPaciente,
+            ),
+        transition: Transition.zoom),
+    GetPage(
+      name: '/foto/',
+      page: () => const Foto(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+        name: '/foto2/',
+        page: () => Fotos2(
+              afoto: markerImageFile2,
             ),
         transition: Transition.zoom),
 

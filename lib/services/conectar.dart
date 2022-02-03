@@ -81,6 +81,7 @@ class Conecta {
         .order('userNome', ascending: true)
         .execute();
     if (response.error == null) {
+//      log(response.data.toString());
       final dataList = response.data as List;
       return (dataList.map((map) => ClassUser.fromJson(map)).toList());
     }

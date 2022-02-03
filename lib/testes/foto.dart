@@ -18,9 +18,9 @@ class Foto extends StatefulWidget {
 bool temfoto = false;
 late File markerImageFile2;
 
-testa() async {
-  final File markerImageFile = await DefaultCacheManager().getSingleFile(
-      'https://xrhyhsbetlnzksauwrvi.supabase.in/storage/v1/object/public/login/odo3.jpg');
+testa(novaFoto) async {
+  final File markerImageFile =
+      await DefaultCacheManager().getSingleFile(novaFoto);
   log(markerImageFile.toString());
   markerImageFile2 = markerImageFile;
 }
@@ -30,7 +30,7 @@ class _FotoState extends State<Foto> {
 
   @override
   void initState() {
-    testa();
+//    testa();
     super.initState();
   }
 
@@ -43,84 +43,137 @@ class _FotoState extends State<Foto> {
         backgroundColor: const Color(0xFF48426D),
       ),
       body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-        const SizedBox(
-          height: 70,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 70,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () async {
+                temfoto ? Get.toNamed("/foto2/") : const Text('');
+              },
+              child: Text(
+                'Passar a Foto',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            temfoto
+                ? Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.amber,
+                    child: Image.file(
+                      markerImageFile2,
+                      fit: BoxFit.contain,
+                    ),
+                  )
+                : const Text('Aguardando'),
+            const SizedBox(
+              height: 60,
+            ),
+            FutureBuilder(
+              future: conectar.getUsers(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<ClassUser>> snapshot) {
+                if (snapshot.hasError) {
+                  return const Text('erro');
+                }
+                if (snapshot.hasData) {
+                  List<ClassUser>? posts = snapshot.data;
+                  return SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 140,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        padding: const EdgeInsets.all(0),
+                        itemCount: posts?.length,
+                        itemBuilder: (_, index) {
+                          return InkWell(
+                            onTap: () async {
+                              await testa(posts![index].userFoto.toString());
+                              setState(() {
+                                temfoto = true;
+                              });
+                              //                             log(posts![index].userNome.toString());
+                            },
+                            child: Container(
+                              width: 110,
+                              height: 125,
+                              margin: const EdgeInsets.only(
+                                left: 15,
+                                bottom: 12,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.4),
+                                    spreadRadius: 0,
+                                    blurRadius: 8,
+                                    offset: const Offset(
+                                        4, 4), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: 110,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      //            color: Colors.red,
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              posts![index].userFoto),
+                                          fit: BoxFit.cover),
+                                      borderRadius: const BorderRadius.only(
+                                        topRight: Radius.circular(20),
+                                        topLeft: Radius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 110,
+                                    height: 25,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue[300],
+                                      borderRadius: const BorderRadius.only(
+                                        bottomRight: Radius.circular(20),
+                                        bottomLeft: Radius.circular(20),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      posts[index].userNome,
+                                      style: GoogleFonts.nunito(fontSize: 16),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  );
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              },
+            ),
+          ],
         ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            elevation: 7,
-            fixedSize: const Size(220, 40),
-            primary: const Color(0xFF48426D),
-            onSurface: Colors.black,
-          ),
-          onPressed: () async {
-            await testa();
-            setState(() {
-              temfoto = true;
-            });
-          },
-          child: Text(
-            'Foto',
-            style: GoogleFonts.montserratAlternates(),
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            elevation: 7,
-            fixedSize: const Size(220, 40),
-            primary: const Color(0xFF48426D),
-            onSurface: Colors.black,
-          ),
-          onPressed: () async {
-            temfoto ? Get.toNamed("/foto2/") : const Text('');
-          },
-          child: Text(
-            'Passar a Foto',
-            style: GoogleFonts.montserratAlternates(),
-          ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        temfoto
-            ? Container(
-                width: 200,
-                height: 200,
-                color: Colors.amber,
-                child: Image.file(
-                  markerImageFile2,
-                  fit: BoxFit.contain,
-                ),
-              )
-            : const Text('Aguardando'),
-        Expanded(
-          child: FutureBuilder(
-            future: conectar.getUsers(),
-            builder: (BuildContext context,
-                AsyncSnapshot<List<ClassUser>> snapshot) {
-              if (snapshot.hasError) {
-                return const Text('erro');
-              }
-              if (snapshot.hasData) {
-                List<ClassUser>? posts = snapshot.data;
-                return ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: posts?.length,
-                  itemBuilder: (_, index) {
-                    return Text(posts![index].userNome.toString());
-                  },
-                );
-              } else {
-                return const Center(child: CircularProgressIndicator());
-              }
-            },
-          ),
-        ),
-      ])),
+      ),
     );
   }
 }

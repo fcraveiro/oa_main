@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oa_main/model/pacientes.dart';
+import 'package:oa_main/model/model_pacientes.dart';
 import '/services/conectar.dart';
 
 class GravaPaciente extends StatefulWidget {

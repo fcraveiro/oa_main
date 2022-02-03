@@ -18,7 +18,7 @@ Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:650px;">
 	<tbody>
 		<tr>
-			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152243420-e3333f68-1648-4ce8-a3af-b5d1c064fc0b.png" style="width: 300px; height: 633px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152305307-8e41b22b-a243-4cfd-b766-9266201b9850.png" style="width: 300px; height: 633px;" /></td>
 			<td>&nbsp;</td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152250991-38f52b2a-fb31-47b2-b4f2-ea8fc23645c5.png" style="width: 300px; height: 633px;" /></td>
 		</tr>

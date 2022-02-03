@@ -40,7 +40,8 @@ class _MenuState extends State<Menu> {
         backgroundColor: const Color(0xFF48426D),
         actions: [
           Row(
-            children: [
+            children: const [
+/*
               GestureDetector(
                 onTap: () => {},
                 child: Container(
@@ -60,7 +61,9 @@ class _MenuState extends State<Menu> {
                       )),
                 ),
               ),
-              const SizedBox(
+
+              */
+              SizedBox(
                 width: 17,
               ),
             ],

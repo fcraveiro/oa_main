@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:supabase/supabase.dart';
 import '/services/config.dart';
-import '/model/pacientes.dart';
+import '../model/model_pacientes.dart';
 
 class Conecta {
   final client = SupabaseClient(supabaseUrl, supabaseKey);

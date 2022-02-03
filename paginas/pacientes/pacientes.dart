@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:oa_main/menu.dart';
-import 'package:oa_main/model/pacientes.dart';
+import 'package:oa_main/paginas/menu.dart';
+import 'package:oa_main/model/model_pacientes.dart';
 import 'package:oa_main/paginas/pacientes/controle_pacientes.dart';
 import 'package:oa_main/services/bouncypage.dart';
 import 'package:oa_main/services/conectar.dart';

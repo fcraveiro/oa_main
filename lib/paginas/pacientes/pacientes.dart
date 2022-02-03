@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:oa_main/services/conectar.dart';
 import 'package:oa_main/services/config.dart';
-import '/model/pacientes.dart';
+import '../../model/model_pacientes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -126,7 +126,8 @@ class _PacientesState extends State<Pacientes> {
         ),
         actions: [
           Row(
-            children: [
+            children: const [
+              /*
               Container(
                 width: 41,
                 height: 38,
@@ -143,7 +144,8 @@ class _PacientesState extends State<Pacientes> {
                       width: 1,
                     )),
               ),
-              const SizedBox(
+              */
+              SizedBox(
                 width: 17,
               ),
             ],
@@ -335,19 +337,6 @@ class _PacientesState extends State<Pacientes> {
           onTap: () {
             indexa = index;
             Get.toNamed("/paciente/");
-
-/*
-            log('Clicado 2');
-            Navigator.push(
-              context,
-              BouncyPageRoute(
-                  widget: Paciente(
-                      filteredPacientes: filteredPacientes, index: index),
-
-                widget: const Menu(),
-              ),
-            );
-*/
           },
           child: Stack(
             children: [

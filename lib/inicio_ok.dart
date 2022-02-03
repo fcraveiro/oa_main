@@ -12,15 +12,6 @@ class Inicio extends StatefulWidget {
 }
 
 final box = GetStorage();
-List fotos = [
-  'odo1',
-  'odo2',
-  'odo3',
-  'odo4',
-  'odo5',
-  'odo6',
-  'odo7',
-];
 
 class _InicioState extends State<Inicio> {
   @override
@@ -46,7 +37,7 @@ class _InicioState extends State<Inicio> {
                 ],
               ),
               Positioned(
-                top: 450,
+                top: 470,
                 right: 0,
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -60,22 +51,22 @@ class _InicioState extends State<Inicio> {
                 ),
               ),
               Positioned(
-                top: 480,
+                top: 500,
                 right: 0,
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: 140,
-                  child: ListView.builder(
-                    shrinkWrap: false,
-//                    padding: const EdgeInsets.only(left: 10),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 6,
-                    itemBuilder: (context, i) {
-                      return fotosEntrada(fotos[i], i);
-                    },
+                  height: 110,
+//                  color: Colors.amber,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      fotosEntrada('odo1', 1),
+                      fotosEntrada('odo2', 2),
+                      fotosEntrada('odo3', 3),
+                    ],
                   ),
                 ),
-              ),
+              )
               //            CustomBottomBar(),
               //            PlayButton(),
             ],
@@ -88,19 +79,15 @@ class _InicioState extends State<Inicio> {
   fotosEntrada(String foto, int valor) {
     return InkWell(
       onTap: () {
-        box.write('dentistaAtual', valor + 1);
-        log(valor.toString());
+        box.write('dentistaAtual', valor);
         Get.toNamed("/menu/");
       },
       child: Container(
-        width: 100,
-        height: 60,
-        margin: const EdgeInsets.only(right: 15, top: 15, bottom: 15, left: 15),
+        width: 90,
+        height: 90,
         decoration: BoxDecoration(
-//          color: Colors.amber,
           image: DecorationImage(
             image: AssetImage('assets/imagens/$foto.jpg'),
-            fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(15),
           boxShadow: [

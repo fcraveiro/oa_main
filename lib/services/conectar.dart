@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:oa_main/model/model_user.dart';
 import 'package:supabase/supabase.dart';
 import '/services/config.dart';
 import '../model/model_pacientes.dart';
@@ -67,6 +68,21 @@ class Conecta {
       log('tem dados');
       final dataList = response.data as List;
       return (dataList.map((map) => ClassPaciente.fromJson(map)).toList());
+    }
+    log('Error fetching notes: ${response.error!.message}');
+    return [];
+  }
+
+  Future<List<ClassUser>> getUsers() async {
+    log('Leu Usuarios');
+    final response = await client
+        .from('usuarios')
+        .select()
+        .order('userNome', ascending: true)
+        .execute();
+    if (response.error == null) {
+      final dataList = response.data as List;
+      return (dataList.map((map) => ClassUser.fromJson(map)).toList());
     }
     log('Error fetching notes: ${response.error!.message}');
     return [];

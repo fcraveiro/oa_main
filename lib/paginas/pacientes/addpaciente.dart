@@ -129,7 +129,7 @@ class _FormTesteState extends State<AddPaciente> {
   }
 
   void gravarPaciente() async {
-    var result = Get.toNamed('/gravapaciente/', arguments: formPaciente);
+    var result = Get.toNamed('/gravapaciente/');
 
     /*
         await Navigator.push(

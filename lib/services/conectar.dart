@@ -88,4 +88,33 @@ class Conecta {
     log('Error fetching notes: ${response.error!.message}');
     return [];
   }
+
+  Future<List> getAgenda() async {
+    log('Leu Agenda 4');
+    final response = await client.from('agenda').select().execute();
+    if (response.error == null) {
+      final dataList = response.data as List;
+      return (dataList);
+    }
+    log('Error fetching notes: ${response.error!.message}');
+    return [];
+  }
+
+  Future cancelAgenda(String agendaUuId, bool situacao) async {
+    await client
+        .from('agenda')
+        .update({'agendaExcluido': true, 'agendaCancelado': situacao})
+        .eq('agendaUuId', agendaUuId)
+        .execute()
+        .then((value) => log('ok'));
+  }
+
+  Future voltaAgenda() async {
+    await client
+        .from('agenda')
+        .update({'agendaExcluido': false, 'agendaCancelado': false})
+        .filter('agendaExcluido', 'eq', true)
+        .execute()
+        .then((value) => log('Volta OK'));
+  }
 }

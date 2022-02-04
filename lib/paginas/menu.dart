@@ -174,6 +174,24 @@ class _MenuState extends State<Menu> {
                 onSurface: Colors.black,
               ),
               onPressed: () {
+                Get.toNamed("/agenda/");
+              },
+              child: Text(
+                'Agenda',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
                 Get.toNamed("/setup/");
               },
               child: Text(

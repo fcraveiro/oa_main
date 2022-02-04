@@ -30,6 +30,7 @@ dependencies:
   via_cep_flutter: ^0.2.2
   #lottie: ^1.2.1
   image_downloader: ^0.31.0
+  table_calendar: ^3.0.3
 
 dev_dependencies:
 

@@ -139,10 +139,10 @@ class _PinState extends State<Pin> {
   }
 
   Widget _textFieldOTP({required bool first, last}) {
-    return Container(
+    return SizedBox(
       height: 60,
 //      color: Colors.yellow,
-      child: Container(
+      child: SizedBox(
         width: 55,
         height: 20,
 //        color: Colors.orange,

@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:get/get.dart';
@@ -21,7 +20,7 @@ late File markerImageFile2;
 testa(novaFoto) async {
   final File markerImageFile =
       await DefaultCacheManager().getSingleFile(novaFoto);
-  log(markerImageFile.toString());
+//  log(markerImageFile.toString());
   markerImageFile2 = markerImageFile;
 }
 
@@ -79,7 +78,7 @@ class _FotoState extends State<Foto> {
                   )
                 : const Text('Aguardando'),
             const SizedBox(
-              height: 60,
+              height: 50,
             ),
             FutureBuilder(
               future: conectar.getUsers(),
@@ -92,14 +91,73 @@ class _FotoState extends State<Foto> {
                   List<ClassUser>? posts = snapshot.data;
                   return SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: 140,
+                    height: 150,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
-                        padding: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(left: 15),
                         itemCount: posts?.length,
                         itemBuilder: (_, index) {
                           return InkWell(
+                            onTap: () async {
+                              await testa(posts![index].userFoto.toString());
+                              setState(() {
+                                temfoto = true;
+                              });
+                              //
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 110,
+                                  height: 110,
+                                  margin: const EdgeInsets.only(right: 15),
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            posts![index].userFoto),
+                                        fit: BoxFit.cover),
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(20),
+                                      topLeft: Radius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 110,
+                                  height: 25,
+                                  margin: const EdgeInsets.only(right: 15),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.4),
+                                        spreadRadius: 0,
+                                        blurRadius: 8,
+                                        offset: const Offset(
+                                            3, 3), // changes position of shadow
+                                      ),
+                                    ],
+                                    color: Colors.blue[300],
+                                    borderRadius: const BorderRadius.only(
+                                      bottomRight: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    posts[index].userNome,
+                                    style: GoogleFonts.nunito(fontSize: 16),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+
+                          /*
+                          
+                           InkWell(
                             onTap: () async {
                               await testa(posts![index].userFoto.toString());
                               setState(() {
@@ -164,6 +222,8 @@ class _FotoState extends State<Foto> {
                               ),
                             ),
                           );
+
+                          */
                         }),
                   );
                 } else {
@@ -176,4 +236,48 @@ class _FotoState extends State<Foto> {
       ),
     );
   }
+}
+
+lala() {
+  return InkWell(
+    onTap: () async {},
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 110,
+          height: 110,
+          margin: const EdgeInsets.only(right: 15),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+                    'https://xrhyhsbetlnzksauwrvi.supabase.in/storage/v1/object/public/login/odo7.jpg'),
+                fit: BoxFit.cover),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              topLeft: Radius.circular(20),
+            ),
+          ),
+        ),
+        Container(
+          width: 110,
+          height: 25,
+          margin: const EdgeInsets.only(right: 15),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: Colors.blue[300],
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
+            ),
+          ),
+          child: Text(
+            'jj',
+            style: GoogleFonts.nunito(fontSize: 16),
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
+    ),
+  );
 }

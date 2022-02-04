@@ -37,7 +37,6 @@ Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 			<td>&nbsp;</td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152559410-1fff5087-5d7a-4eda-b873-1d7e2cfa8d8e.png" style="width: 260px; height: 633px;" /></td>
 		</tr>
-
 	</tbody>
 </table>
 

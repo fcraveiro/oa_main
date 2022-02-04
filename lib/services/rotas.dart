@@ -7,6 +7,7 @@ import 'package:oa_main/paginas/pacientes/paciente.dart';
 import 'package:oa_main/paginas/pacientes/pacientes.dart';
 import 'package:oa_main/testes/foto.dart';
 import 'package:oa_main/testes/fotos2.dart';
+import 'package:oa_main/testes/grid.dart';
 import 'package:oa_main/testes/pin.dart';
 
 rotas() {
@@ -53,6 +54,11 @@ rotas() {
     GetPage(
       name: '/pin/',
       page: () => const Pin(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/grid/',
+      page: () => const GridStagerade(),
       transition: Transition.zoom,
     ),
 

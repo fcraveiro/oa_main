@@ -23,6 +23,8 @@ dependencies:
   flutter_slidable: ^1.1.0
   mask_text_input_formatter: ^2.0.0
   flutter_cache_manager: ^3.3.0
+  staggered_grid_view_flutter: ^0.0.4
+  transparent_image: ^2.0.0
 
   #toggle_switch: ^1.3.0
   #flutter_colorpicker: ^1.0.3

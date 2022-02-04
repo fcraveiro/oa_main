@@ -2,7 +2,7 @@
 
 App Odonto Atual
 
-Sistema de gerenciamento de Clientes e Agenda
+Sistema de gerenciamento de Pacientes e Agendamento
 
 ## Additional information
 

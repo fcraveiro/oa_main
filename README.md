@@ -33,9 +33,7 @@ Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152251021-c9bd1e3a-077f-4d3e-9542-901dd30b0786.png" style="width: 340px; height: 530px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152461734-57a48d39-36dc-4785-aecc-aa1ec9841506.png" style="width: 340px; height: 530px;" /></td>		</tr>
 		<tr>
-
-			<td>&nbsp;</td>
-			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152559410-1fff5087-5d7a-4eda-b873-1d7e2cfa8d8e.png" style="width: 260px; height: 633px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152559410-1fff5087-5d7a-4eda-b873-1d7e2cfa8d8e.png" style="width: 340px; height: 530px;" /></td>
 		</tr>
 	</tbody>
 </table>

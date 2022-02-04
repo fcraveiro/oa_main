@@ -74,7 +74,7 @@ class _MenuState extends State<Menu> {
         child: Column(
           children: [
             const SizedBox(
-              height: 120,
+              height: 80,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -92,7 +92,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -110,7 +110,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -128,7 +128,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -146,7 +146,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -160,6 +160,24 @@ class _MenuState extends State<Menu> {
               },
               child: Text(
                 'Grid 1',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/setup/");
+              },
+              child: Text(
+                'Setup',
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),

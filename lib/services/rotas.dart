@@ -9,6 +9,7 @@ import 'package:oa_main/testes/foto.dart';
 import 'package:oa_main/testes/fotos2.dart';
 import 'package:oa_main/testes/grid.dart';
 import 'package:oa_main/testes/pin.dart';
+import 'package:oa_main/testes/setup.dart';
 
 rotas() {
   return [
@@ -59,6 +60,11 @@ rotas() {
     GetPage(
       name: '/grid/',
       page: () => const GridStagerade(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/setup/',
+      page: () => const Setup(),
       transition: Transition.zoom,
     ),
 

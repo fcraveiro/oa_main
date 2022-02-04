@@ -127,6 +127,24 @@ class _MenuState extends State<Menu> {
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/pin/");
+              },
+              child: Text(
+                'Pin',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
           ],
         ),
       ),

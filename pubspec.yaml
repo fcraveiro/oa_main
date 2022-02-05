@@ -11,26 +11,30 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
+  flutter_localizations:                # Importante  
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  font_awesome_flutter: ^9.2.0
-  get: ^4.6.1
-  get_storage: ^2.0.3
-  google_fonts: ^2.2.0
-  supabase: ^0.2.10
-  oa_fone: ^1.0.2
-  flutter_slidable: ^1.1.0
-  mask_text_input_formatter: ^2.0.0
-  flutter_cache_manager: ^3.3.0
-  staggered_grid_view_flutter: ^0.0.4
-  transparent_image: ^2.0.0
-  toggle_switch: ^1.4.0
-  flutter_colorpicker: ^1.0.3
-  via_cep_flutter: ^0.2.2
-  image_picker: ^0.8.4+6
-  table_calendar: ^3.0.3
+  flutter_slidable: ^1.1.0              # Importante  
+  image_picker: ^0.8.4+6                # Importante  
+  table_calendar: ^3.0.3                # Importante  
 
+  font_awesome_flutter: ^9.2.0          # Basico
+  get: ^4.6.1                           # Basico
+  get_storage: ^2.0.3                   # Basico
+  google_fonts: ^2.2.0                  # Basico
+  supabase: ^0.2.10                     # Basico
+
+  oa_fone: ^1.0.2                       # Package Propria 
+  via_cep_flutter: ^0.2.2               # Alterar para Propria 
+
+  flutter_cache_manager: ^3.3.0         # Maquiagem
+
+  mask_text_input_formatter: ^2.0.0     # Rever
+  staggered_grid_view_flutter: ^0.0.4   # Dispensavel
+  transparent_image: ^2.0.0             # Dispensavel
+  toggle_switch: ^1.4.0                 # Dispensavel
+  flutter_colorpicker: ^1.0.3           # Dispensavel
+
+  #cupertino_icons: ^1.0.2           
   #image_downloader: ^0.31.0
   #lottie: ^1.2.1
 

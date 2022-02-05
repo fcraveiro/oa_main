@@ -28,9 +28,11 @@ dependencies:
   toggle_switch: ^1.4.0
   flutter_colorpicker: ^1.0.3
   via_cep_flutter: ^0.2.2
-  #lottie: ^1.2.1
-  image_downloader: ^0.31.0
+  image_picker: ^0.8.4+6
   table_calendar: ^3.0.3
+
+  #image_downloader: ^0.31.0
+  #lottie: ^1.2.1
 
 dev_dependencies:
 

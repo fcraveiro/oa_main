@@ -9,6 +9,7 @@ import 'package:oa_main/testes/agenda.dart';
 import 'package:oa_main/testes/foto.dart';
 import 'package:oa_main/testes/fotos2.dart';
 import 'package:oa_main/testes/grid.dart';
+import 'package:oa_main/testes/pickernovo.dart';
 import 'package:oa_main/testes/pin.dart';
 import 'package:oa_main/testes/setup.dart';
 
@@ -71,6 +72,11 @@ rotas() {
     GetPage(
       name: '/agenda/',
       page: () => const AgendaPacientes(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/picker2/',
+      page: () => const Picker2(),
       transition: Transition.zoom,
     ),
 

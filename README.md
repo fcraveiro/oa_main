@@ -19,8 +19,8 @@ Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 	<tbody>
 		<tr>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152305307-8e41b22b-a243-4cfd-b766-9266201b9850.png" style="width: 340px; height: 530px;" /></td>
-			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152250991-38f52b2a-fb31-47b2-b4f2-ea8fc23645c5.png" style="width: 340px; height: 530px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152243463-0eee9690-5dd3-461e-8945-d901915a6628.png" style="width: 340px; height: 530px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654718-f57d94c2-7e0d-4ad6-8f05-7bb359a0cd5e.png" style="width: 340px; height: 530px;" /></td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
@@ -37,5 +37,11 @@ Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152596164-5cff9d95-1735-4f27-8bf5-afb4bfa6b779.png" style="width: 340px; height: 530px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152617239-e4513285-2ba6-4270-833e-d74dcbff03ca.png" style="width: 340px; height: 530px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654072-54f397d4-54c7-4c6b-b160-e635a9181c87.png" style="width: 340px; height: 530px;" /></td>		</tr>
+		<tr>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654718-f57d94c2-7e0d-4ad6-8f05-7bb359a0cd5e.png" style="width: 340px; height: 530px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654789-ea3eceb3-4a3c-4284-b9e8-c8e86a9178ab.png" style="width: 340px; height: 530px;" /></td>
+			<td><img alt="" src="" style="width: 340px; height: 530px;" /></td>
+</tr>
 	</tbody>
 </table>
+

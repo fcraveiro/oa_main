@@ -16,6 +16,7 @@ dependencies:
   flutter_slidable: ^1.1.0              # Importante  
   image_picker: ^0.8.4+6                # Importante  
   table_calendar: ^3.0.3                # Importante  
+  flutter_native_image: ^0.0.6+1        # Importante Ver Substituto
 
   font_awesome_flutter: ^9.2.0          # Basico
   get: ^4.6.1                           # Basico
@@ -33,10 +34,11 @@ dependencies:
   transparent_image: ^2.0.0             # Dispensavel
   toggle_switch: ^1.4.0                 # Dispensavel
   flutter_colorpicker: ^1.0.3           # Dispensavel
+  lottie: ^1.2.1                        # Dispensavel
+  intl: ^0.17.0                         # Observar
 
   #cupertino_icons: ^1.0.2           
   #image_downloader: ^0.31.0
-  #lottie: ^1.2.1
 
 dev_dependencies:
 

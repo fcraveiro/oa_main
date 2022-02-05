@@ -1,17 +1,19 @@
 import 'package:get/get.dart';
 import 'package:oa_main/paginas/inicio.dart';
-import 'package:oa_main/paginas/menu.dart';
+import 'package:oa_main/menu.dart';
 import 'package:oa_main/paginas/pacientes/addpaciente.dart';
 import 'package:oa_main/paginas/pacientes/gravapacientes.dart';
 import 'package:oa_main/paginas/pacientes/paciente.dart';
 import 'package:oa_main/paginas/pacientes/pacientes.dart';
-import 'package:oa_main/testes/agenda.dart';
-import 'package:oa_main/testes/foto.dart';
-import 'package:oa_main/testes/fotos2.dart';
-import 'package:oa_main/testes/grid.dart';
-import 'package:oa_main/testes/pickernovo.dart';
-import 'package:oa_main/testes/pin.dart';
-import 'package:oa_main/testes/setup.dart';
+
+import '../beta/agenda.dart';
+import '../beta/foto.dart';
+import '../beta/fotos2.dart';
+import '../beta/grid.dart';
+import '../beta/picker.dart';
+import '../beta/pickernovo.dart';
+import '../beta/pin.dart';
+import '../beta/setup.dart';
 
 rotas() {
   return [
@@ -79,7 +81,11 @@ rotas() {
       page: () => const Picker2(),
       transition: Transition.zoom,
     ),
-
+    GetPage(
+      name: '/picker1/',
+      page: () => const Picker(),
+      transition: Transition.zoom,
+    ),
 /*
 
 

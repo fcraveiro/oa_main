@@ -74,7 +74,7 @@ class _MenuState extends State<Menu> {
         child: Column(
           children: [
             const SizedBox(
-              height: 60,
+              height: 40,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -92,7 +92,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -110,7 +110,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -128,7 +128,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -146,7 +146,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -164,7 +164,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -182,7 +182,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -200,7 +200,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -214,6 +214,24 @@ class _MenuState extends State<Menu> {
               },
               child: Text(
                 'Setup',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/picker1/");
+              },
+              child: Text(
+                'Picker 1',
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),

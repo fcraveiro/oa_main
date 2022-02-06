@@ -45,11 +45,13 @@ class _ProfileState extends State<Profile> {
               height: 60,
             ),
             image != null
-                ? Image.file(
-                    image!,
-                    width: 300,
-                    height: 340,
-                    fit: BoxFit.cover,
+                ? ClipOval(
+                    child: Image.file(
+                      image!,
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                    ),
                   )
                 : const FlutterLogo(
                     size: 160,

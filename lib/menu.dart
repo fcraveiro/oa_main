@@ -253,6 +253,24 @@ class _MenuState extends State<Menu> {
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),
+            const SizedBox(
+              height: 5,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/profile2/");
+              },
+              child: Text(
+                'Profile 2',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
           ],
         ),
       ),

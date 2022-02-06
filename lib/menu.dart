@@ -74,12 +74,12 @@ class _MenuState extends State<Menu> {
         child: Column(
           children: [
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 7,
-                fixedSize: const Size(220, 40),
+                fixedSize: const Size(220, 35),
                 primary: const Color(0xFF48426D),
                 onSurface: Colors.black,
               ),
@@ -92,12 +92,12 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 7,
-                fixedSize: const Size(220, 40),
+                fixedSize: const Size(220, 35),
                 primary: const Color(0xFF48426D),
                 onSurface: Colors.black,
               ),
@@ -110,12 +110,12 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 7,
-                fixedSize: const Size(220, 40),
+                fixedSize: const Size(220, 35),
                 primary: const Color(0xFF48426D),
                 onSurface: Colors.black,
               ),
@@ -128,49 +128,13 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 7,
-                fixedSize: const Size(220, 40),
-                primary: const Color(0xFF48426D),
-                onSurface: Colors.black,
-              ),
-              onPressed: () {
-                Get.toNamed("/pin/");
-              },
-              child: Text(
-                'Pin',
-                style: GoogleFonts.montserratAlternates(),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 7,
-                fixedSize: const Size(220, 40),
-                primary: const Color(0xFF48426D),
-                onSurface: Colors.black,
-              ),
-              onPressed: () {
-                Get.toNamed("/grid/");
-              },
-              child: Text(
-                'Grid 1',
-                style: GoogleFonts.montserratAlternates(),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 7,
-                fixedSize: const Size(220, 40),
-                primary: const Color(0xFF48426D),
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
                 onSurface: Colors.black,
               ),
               onPressed: () {
@@ -182,31 +146,13 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 7,
-                fixedSize: const Size(220, 40),
-                primary: const Color(0xFF48426D),
-                onSurface: Colors.black,
-              ),
-              onPressed: () {
-                Get.toNamed("/picker2/");
-              },
-              child: Text(
-                'Picker 2',
-                style: GoogleFonts.montserratAlternates(),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 7,
-                fixedSize: const Size(220, 40),
-                primary: const Color(0xFF48426D),
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
                 onSurface: Colors.black,
               ),
               onPressed: () {
@@ -218,13 +164,49 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 7,
-                fixedSize: const Size(220, 40),
-                primary: const Color(0xFF48426D),
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/pin/");
+              },
+              child: Text(
+                'Pin',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/grid/");
+              },
+              child: Text(
+                'Grid 1',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
                 onSurface: Colors.black,
               ),
               onPressed: () {
@@ -232,6 +214,42 @@ class _MenuState extends State<Menu> {
               },
               child: Text(
                 'Picker 1',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/picker2/");
+              },
+              child: Text(
+                'Picker 2',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/profile/");
+              },
+              child: Text(
+                'Profile',
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),

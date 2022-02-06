@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
+import 'package:oa_main/beta/profile.dart';
 import 'package:oa_main/paginas/inicio.dart';
 import 'package:oa_main/menu.dart';
 import 'package:oa_main/paginas/pacientes/addpaciente.dart';
 import 'package:oa_main/paginas/pacientes/gravapacientes.dart';
 import 'package:oa_main/paginas/pacientes/paciente.dart';
 import 'package:oa_main/paginas/pacientes/pacientes.dart';
-
 import '../beta/agenda.dart';
 import '../beta/foto.dart';
 import '../beta/fotos2.dart';
@@ -86,31 +86,10 @@ rotas() {
       page: () => const Picker(),
       transition: Transition.zoom,
     ),
-/*
-
-
-                  filteredPacientes: filteredPacientes,
-                  index: null,
-
-
-        GetPage(
-            name: '/pagina2/',
-            page: () => Pagina2(
-                  texto: texto,
-                ),
-            transition: Transition.zoom),
-
-        GetPage(
-            name: '/pagina3',
-            page: () => Pagina3(
-                  teste: teste,
-                ),
-            transition: Transition.zoom),
-        GetPage(
-            name: '/pagina4',
-            page: () => const Pagina4(),
-            transition: Transition.zoom),
-
-*/
+    GetPage(
+      name: '/profile/',
+      page: () => const Profile(),
+      transition: Transition.zoom,
+    ),
   ];
 }

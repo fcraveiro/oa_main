@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:oa_main/model/model_pacientes.dart';
+import 'package:oa_main/paginas/pacientes/controle_pacientes.dart';
 import 'package:via_cep_flutter/via_cep_flutter.dart';
 
 class AddPaciente extends StatefulWidget {
@@ -168,6 +169,8 @@ class _FormTesteState extends State<AddPaciente> {
             children: [
               GestureDetector(
                 onTap: () => {
+                  conectar.ouvir(),
+                  log('passou'),
 /*
                   Navigator.push(
                       context,

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:oa_main/beta/profile.dart';
 import 'package:oa_main/beta/profile2.dart';
+import 'package:oa_main/beta/stream.dart';
 import 'package:oa_main/paginas/inicio.dart';
 import 'package:oa_main/menu.dart';
 import 'package:oa_main/paginas/pacientes/addpaciente.dart';
@@ -95,6 +96,11 @@ rotas() {
     GetPage(
       name: '/profile2/',
       page: () => const Profile2(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/stream/',
+      page: () => const Stream(),
       transition: Transition.zoom,
     ),
   ];

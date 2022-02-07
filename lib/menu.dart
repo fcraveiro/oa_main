@@ -92,7 +92,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -110,7 +110,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -128,7 +128,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -146,7 +146,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -164,7 +164,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -182,7 +182,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -200,7 +200,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -218,7 +218,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -236,7 +236,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -254,7 +254,7 @@ class _MenuState extends State<Menu> {
               ),
             ),
             const SizedBox(
-              height: 5,
+              height: 0,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -268,6 +268,24 @@ class _MenuState extends State<Menu> {
               },
               child: Text(
                 'Profile 2',
+                style: GoogleFonts.montserratAlternates(),
+              ),
+            ),
+            const SizedBox(
+              height: 0,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 35),
+                primary: const Color.fromARGB(255, 49, 112, 12),
+                onSurface: Colors.black,
+              ),
+              onPressed: () {
+                Get.toNamed("/stream/");
+              },
+              child: Text(
+                'Stream',
                 style: GoogleFonts.montserratAlternates(),
               ),
             ),

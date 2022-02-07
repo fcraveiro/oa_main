@@ -117,4 +117,19 @@ class Conecta {
         .execute()
         .then((value) => log('Volta OK'));
   }
+
+  ouvir() {
+    // ignore: unused_local_variable
+    final mySubscription =
+        client.from('teste').on(SupabaseEventTypes.all, (payload) {
+      log('Dados foram Alterados');
+      // Handle realtime payload
+    }).subscribe();
+  }
+
+  lerTeste() {
+    log('Leu Usuarios');
+    final response = client.from('teste').select().execute();
+    return (response);
+  }
 }

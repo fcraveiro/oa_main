@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,7 @@ class Profile2 extends StatefulWidget {
 
 class _Profile2State extends State<Profile2> {
   File? image;
+  File? image2;
 
   Future pickImage(ImageSource imageType) async {
     try {
@@ -22,6 +24,7 @@ class _Profile2State extends State<Profile2> {
       if (image == null) return;
       final tempImage = File(image.path);
       log('Volta ${image.path.toString()}');
+      teste(image.path);
       setState(() {
         this.image = tempImage;
       });
@@ -187,7 +190,17 @@ class _Profile2State extends State<Profile2> {
                 primary: const Color(0xFF48426D),
                 onSurface: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: () async {
+                File compressedFile = await FlutterNativeImage.compressImage(
+                    image!.path,
+                    quality: 80,
+                    targetWidth: 600,
+                    targetHeight: 300);
+                log(compressedFile.toString());
+                setState(() {
+                  image2 = compressedFile;
+                });
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -208,9 +221,34 @@ class _Profile2State extends State<Profile2> {
                 ],
               ),
             ),
-          )
+          ),
+          image2 != null
+              ? Image.file(
+                  image!,
+                  width: 170,
+                  height: 170,
+                  fit: BoxFit.scaleDown,
+                )
+              : const Text('nada ainda')
         ],
       ),
     );
   }
+}
+
+teste(file) async {
+  ImageProperties properties =
+      await FlutterNativeImage.getImageProperties(file);
+  await FlutterNativeImage.getImageProperties(file);
+
+  File compressedFile = await FlutterNativeImage.compressImage(file,
+      quality: 80, targetWidth: 250, targetHeight: 400);
+
+  log(compressedFile.toString());
+  log(properties.width.toString());
+  log(properties.height.toString());
+  ImageProperties properties2 =
+      await FlutterNativeImage.getImageProperties(compressedFile.path);
+  log(properties2.width.toString());
+  log(properties2.height.toString());
 }

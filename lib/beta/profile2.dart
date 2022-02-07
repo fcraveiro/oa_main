@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,6 +21,7 @@ class _Profile2State extends State<Profile2> {
       final image = await ImagePicker().pickImage(source: imageType);
       if (image == null) return;
       final tempImage = File(image.path);
+      log('Volta ${image.path.toString()}');
       setState(() {
         this.image = tempImage;
       });

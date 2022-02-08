@@ -51,8 +51,6 @@ Flutter (Channel stable, 2.10.0, locale pt-BR)
 </tr>
 		<tr>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153039861-99aa1c06-1618-4cf3-b98e-a23eb431a03a.png" style="width: 290px height: 500px;" /></td>
-			<td><img alt="" src="" style="width: 290px height: 500px;" /></td>
-			<td><img alt="" src="" style="width: 290px height: 500px;" /></td>
 </tr>
 	</tbody>
 </table>

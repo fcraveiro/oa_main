@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,8 @@ class Stream extends StatefulWidget {
 }
 
 final client = SupabaseClient(supabaseUrl, supabaseKey);
+int indexa2 = 0;
+bool valor = true;
 
 class _FormTesteState extends State<Stream> {
   List<ClassTeste> challengeModelList = [];
@@ -31,7 +34,7 @@ class _FormTesteState extends State<Stream> {
       appBar: AppBar(
         elevation: 0,
         title: Text(
-          'Incluir Pacientes',
+          'StreamBuilder',
           style: GoogleFonts.montserratAlternates(
             fontSize: 22,
             fontWeight: FontWeight.w400,
@@ -43,11 +46,35 @@ class _FormTesteState extends State<Stream> {
             children: [
               GestureDetector(
                 onTap: () => {
-                  conectar.ouvir(),
-                  log('passou'),
+                  conectar.sair(),
                 },
                 child: const FaIcon(
-                  FontAwesomeIcons.bars,
+                  Icons.exposure_minus_1,
+                  size: 16,
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              GestureDetector(
+                onTap: () => {
+                  conectar.ouvir(),
+                },
+                child: const FaIcon(
+                  Icons.subscriptions,
+                  size: 16,
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              GestureDetector(
+                onTap: () => {
+                  valor = !valor,
+                  conectar.updateTeste(valor),
+                },
+                child: const FaIcon(
+                  FontAwesomeIcons.plus,
                   size: 16,
                 ),
               ),
@@ -85,18 +112,34 @@ class _FormTesteState extends State<Stream> {
               ),
             ),
             StreamBuilder<List<Map<String, dynamic>>>(
-                stream: client.from('teste').stream([]).execute(),
+                stream: client.from('teste').stream(['pacUuId']).execute(),
                 builder: (BuildContext context,
                     AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
-                  if (!snapshot.hasData ||
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const CircularProgressIndicator();
+                  }
+                  if (snapshot.hasError) {
+                    return const Text('Erro');
+                  } else {
+                    log('Retorno ${snapshot.data.toString()}');
+                    indexa2++;
+                    log(indexa2.toString());
+                    return Text('Retorno $indexa2');
+                  }
+
+                  /*
+                  .hasData ||
                       snapshot.hasError ||
                       snapshot.data!.isEmpty) {
                     return Container();
                   }
+                  log('BINGO');
                   for (var data in snapshot.data!) {
                     challengeModelList.add(ClassTeste.fromJson(data));
                   }
                   return Text(challengeModelList.first.tesText1);
+                
+                */
                 }),
 
 /*

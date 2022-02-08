@@ -120,16 +120,39 @@ class Conecta {
 
   ouvir() {
     // ignore: unused_local_variable
+    log('Inscrito');
     final mySubscription =
         client.from('teste').on(SupabaseEventTypes.all, (payload) {
       log('Dados foram Alterados');
       // Handle realtime payload
     }).subscribe();
+    log(mySubscription.toString());
+    log(mySubscription.params.toString());
+
+    log('Inscrição ${mySubscription.subscribe().toString()}');
+  }
+
+  sair() {
+    log('Inscrito Sair');
+    final nova = client.getSubscriptions();
+    log(nova.toString());
+    log(nova.length.toString());
+//    log(nova.first.toString());
+//    client.removeSubscription(nova.first);
   }
 
   lerTeste() {
     log('Leu Usuarios');
     final response = client.from('teste').select().execute();
     return (response);
+  }
+
+  updateTeste(valor) {
+    log('Valor = $valor');
+    client
+        .from('teste')
+        .update({'tesBool3': valor})
+        .filter('tesInt1', 'eq', '212121')
+        .execute();
   }
 }

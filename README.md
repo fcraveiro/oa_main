@@ -50,8 +50,14 @@ Flutter (Channel stable, 2.10.0, locale pt-BR)
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654789-ea3eceb3-4a3c-4284-b9e8-c8e86a9178ab.png" style="width: 290px height: 500px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152695591-6d3956ef-1a1b-4cfc-a972-cd69ad58f7aa.png" style="width: 290px height: 500px;" /></td>
 </tr>
+		<tr>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654718-f57d94c2-7e0d-4ad6-8f05-7bb359a0cd5e.png" style="width: 290px height: 500px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152654789-ea3eceb3-4a3c-4284-b9e8-c8e86a9178ab.png" style="width: 290px height: 500px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/152695591-6d3956ef-1a1b-4cfc-a972-cd69ad58f7aa.png" style="width: 290px height: 500px;" /></td>
+</tr>
 	</tbody>
 </table>
+
 
 </br></br>
 ## License Information

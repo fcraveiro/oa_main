@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:oa_main/model/model_teste.dart';
 import 'package:oa_main/model/model_user.dart';
 import 'package:supabase/supabase.dart';
 import '/services/config.dart';
@@ -152,7 +153,18 @@ class Conecta {
     client
         .from('teste')
         .update({'tesBool3': valor})
-        .filter('tesInt1', 'eq', '212121')
+        .filter('tesInt3', 'eq', '111111')
         .execute();
+  }
+
+  Future addTeste(campos) async {
+    ClassTeste teste = campos;
+    Map<String, dynamic> testeJson = teste.toJson();
+    log(testeJson.toString());
+    await client
+        .from('teste')
+        .insert(testeJson)
+        .execute()
+        .then((value) => log(value.error.toString()));
   }
 }

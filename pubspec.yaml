@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.17.0                         # Observar
   #cupertino_icons: ^1.0.2           
   #image_downloader: ^0.31.0
+  image_cropper: ^1.4.1
 
 dev_dependencies:
 

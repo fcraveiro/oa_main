@@ -52,13 +52,13 @@ Flutter (Channel stable, 2.10.0, locale pt-BR)
 </tr>
 		<tr>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153041865-e80a2273-eb10-4b33-b7e2-ea781288d2d4.png" style="width: 290px height: 500px;" /></td>
-			<td><img alt="" src="" style="width: 290px height: 500px;" /></td>
-			<td><img alt="" src="" style="width: 290px height: 500px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153119479-9accea75-1a82-4c73-b061-25651e294e20.png" style="width: 290px height: 500px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153119468-d20a0349-4394-4f96-8a13-bd44253b9f87.png" style="width: 290px height: 500px;" /></td>
 </tr>
 	</tbody>
 </table>
 
-</br></br>
+</br>
 ## License Information
 
 MIT License

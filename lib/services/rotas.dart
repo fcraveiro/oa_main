@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:oa_main/beta/picker3.dart';
 import 'package:oa_main/beta/profile.dart';
 import 'package:oa_main/beta/profile2.dart';
 import 'package:oa_main/beta/stream.dart';
@@ -101,6 +102,11 @@ rotas() {
     GetPage(
       name: '/stream/',
       page: () => const Stream(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/picker3/',
+      page: () => const Picker3(),
       transition: Transition.zoom,
     ),
   ];

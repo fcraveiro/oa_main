@@ -7,6 +7,7 @@ import 'package:oa_main/services/rotas.dart';
 import 'package:oa_main/paginas/unknowpage.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   runApp(const MyApp());
 }

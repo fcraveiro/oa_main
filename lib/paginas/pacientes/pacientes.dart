@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:oa_main/services/conectar.dart';
-import 'package:oa_main/services/config.dart';
+import 'package:oa_main/services/config.cfg';
 import '../../model/model_pacientes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';

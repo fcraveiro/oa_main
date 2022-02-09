@@ -7,7 +7,7 @@ import 'package:oa_main/services/conectar.dart';
 import 'package:supabase/supabase.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '/services/config.dart';
+import '/services/config.cfg';
 
 class AgendaPacientes extends StatefulWidget {
   const AgendaPacientes({Key? key}) : super(key: key);

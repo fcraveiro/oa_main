@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oa_main/model/model_teste.dart';
 import 'package:oa_main/paginas/pacientes/controle_pacientes.dart';
-import 'package:oa_main/services/config.dart';
+import 'package:oa_main/services/config.cfg';
 import 'package:supabase/supabase.dart';
 
 class Stream extends StatefulWidget {

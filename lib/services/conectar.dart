@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:oa_main/model/model_teste.dart';
 import 'package:oa_main/model/model_user.dart';
 import 'package:supabase/supabase.dart';
-import '/services/config.dart';
+import '/services/config.cfg';
 import '../model/model_pacientes.dart';
 
 class Conecta {

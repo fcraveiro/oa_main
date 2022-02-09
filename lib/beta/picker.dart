@@ -4,7 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:supabase/supabase.dart';
 import 'package:lottie/lottie.dart';
-import '/services/config.dart';
+import '/services/config.cfg';
 import 'dart:math';
 import 'dart:io';
 

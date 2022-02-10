@@ -170,18 +170,18 @@ class Conecta {
   }
 
   Future<List<ClassTesteRls>> getRLS() async {
-    log('Leu Rls');
+//    log('Leu Rls');
     final response = await client
         .from('teste2')
         .select()
         .order('tes2Nome', ascending: true)
         .execute();
-    log(response.error.toString());
+//    log(response.error.toString());
     if (response.error == null) {
       final dataList = response.data as List;
       return (dataList.map((map) => ClassTesteRls.fromJson(map)).toList());
     }
-    log('Error fetching notes: ${response.error!.message}');
+//    log('Error fetching notes: ${response.error!.message}');
     return [];
   }
 
@@ -203,10 +203,21 @@ class Conecta {
   rpc4(int valor) async {
     final response =
         await client.rpc('vote4', params: {'valor': valor}).execute();
+    log(response.count.toString());
+    log(response.error.toString());
+    log(response.status.toString());
+    log(response.data.toString());
+    log(response.toString());
     return response;
   }
 
-  void rpc5(valor) async {
-    await client.rpc('addvotos').execute();
+  rpc5() async {
+    final response = await client.rpc('teste1').execute();
+//    log('Retorno Count: ${response.count.toString()}');
+//    log('Retorno Error: ${response.error.toString()}');
+//    log('Retorno Status: ${response.status.toString()}');
+//    log('Retorno Data: ${response.data.toString()}');
+//    log('Retorno Response: ${response.toString()}');
+    return response.data;
   }
 }

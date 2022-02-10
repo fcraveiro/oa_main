@@ -10,7 +10,7 @@ class TesteRls extends StatefulWidget {
   State<TesteRls> createState() => _TesteRlsState();
 }
 
-int aa2 = 0;
+var aa2 = 0;
 
 class _TesteRlsState extends State<TesteRls> {
   Conecta conectar = Conecta();
@@ -28,6 +28,12 @@ class _TesteRlsState extends State<TesteRls> {
         title: const Text('Remote Procedure Call'),
         centerTitle: true,
         backgroundColor: const Color(0xFF48426D),
+        actions: [
+          Center(child: Text(aa2.toString())),
+          const SizedBox(
+            width: 15,
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -112,10 +118,13 @@ class _TesteRlsState extends State<TesteRls> {
                 onSurface: Colors.black,
               ),
               onPressed: () async {
-                conectar.rpc5(15);
+                aa2 = await conectar.rpc5();
+                setState(() {
+                  aa2;
+                });
               },
               child: Text(
-                'Totalizar',
+                'Retorno',
                 style: GoogleFonts.montserratAlternates(
                   fontSize: 16,
                 ),

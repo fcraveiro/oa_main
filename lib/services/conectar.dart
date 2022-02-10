@@ -186,8 +186,27 @@ class Conecta {
   }
 
   rpc1() async {
-    final response = await client.rpc('vote').execute();
-    log('Response  ${response.toString()}');
+    final response = await client.rpc('vote2').execute();
     return response;
+  }
+
+  rpc2() async {
+    final response = await client.rpc('vote1').execute();
+    return response;
+  }
+
+  rpc3() async {
+    final response = await client.rpc('vote3').execute();
+    return response;
+  }
+
+  rpc4(int valor) async {
+    final response =
+        await client.rpc('vote4', params: {'valor': valor}).execute();
+    return response;
+  }
+
+  void rpc5(valor) async {
+    await client.rpc('addvotos').execute();
   }
 }

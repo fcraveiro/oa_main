@@ -125,11 +125,16 @@ class _Picker3State extends State<Picker3> {
 //          CropAspectRatioPreset.ratio4x3,
 //          CropAspectRatioPreset.ratio16x9
         ],
-        androidUiSettings: const AndroidUiSettings(
+        androidUiSettings: AndroidUiSettings(
             toolbarTitle: 'Recortar Foto',
-            toolbarColor: Color(0xFF48426D),
-            toolbarWidgetColor: Colors.white,
-            statusBarColor: Color(0xFF48426D),
+            toolbarColor: const Color(0xFF48426D),
+            toolbarWidgetColor: const Color(0xFFFFFFFF),
+            statusBarColor: const Color(0xFF48426D),
+            cropGridColor: const Color(0xFFFFC107),
+            cropFrameColor: const Color(0xFFFFEB3B),
+            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+            dimmedLayerColor:
+                const Color.fromARGB(122, 0, 0, 0).withOpacity(.5),
             initAspectRatio: CropAspectRatioPreset.original,
             lockAspectRatio: false),
         iosUiSettings: const IOSUiSettings(

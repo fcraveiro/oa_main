@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:oa_main/beta/picker3.dart';
 import 'package:oa_main/beta/profile.dart';
 import 'package:oa_main/beta/profile2.dart';
+import 'package:oa_main/beta/rls.dart';
 import 'package:oa_main/beta/stream.dart';
 import 'package:oa_main/paginas/inicio.dart';
 import 'package:oa_main/menu.dart';
@@ -107,6 +108,11 @@ rotas() {
     GetPage(
       name: '/picker3/',
       page: () => const Picker3(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/rls/',
+      page: () => const TesteRls(),
       transition: Transition.zoom,
     ),
   ];

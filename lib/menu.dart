@@ -132,6 +132,7 @@ class _MenuState extends State<Menu> {
               alignment: AlignmentDirectional.center,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -179,6 +180,15 @@ class _MenuState extends State<Menu> {
                         },
                         child: texto(
                           'Picker 1',
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: estilo2,
+                        onPressed: () {
+                          Get.toNamed("/rls/");
+                        },
+                        child: texto(
+                          'Teste Rls',
                         ),
                       ),
                     ],

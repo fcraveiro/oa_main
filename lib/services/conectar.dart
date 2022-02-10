@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:oa_main/model/model_teste.dart';
+import 'package:oa_main/model/model_testerls.dart';
 import 'package:oa_main/model/model_user.dart';
 import 'package:supabase/supabase.dart';
 import '/services/config.cfg';
@@ -166,5 +167,27 @@ class Conecta {
         .insert(testeJson)
         .execute()
         .then((value) => log(value.error.toString()));
+  }
+
+  Future<List<ClassTesteRls>> getRLS() async {
+    log('Leu Rls');
+    final response = await client
+        .from('teste2')
+        .select()
+        .order('tes2Nome', ascending: true)
+        .execute();
+    log(response.error.toString());
+    if (response.error == null) {
+      final dataList = response.data as List;
+      return (dataList.map((map) => ClassTesteRls.fromJson(map)).toList());
+    }
+    log('Error fetching notes: ${response.error!.message}');
+    return [];
+  }
+
+  rpc1() async {
+    final response = await client.rpc('vote').execute();
+    log('Response  ${response.toString()}');
+    return response;
   }
 }

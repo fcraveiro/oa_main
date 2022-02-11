@@ -185,10 +185,10 @@ class _MenuState extends State<Menu> {
                       ElevatedButton(
                         style: estilo2,
                         onPressed: () {
-                          Get.toNamed("/rls/");
+                          Get.toNamed("/rpc/");
                         },
                         child: texto(
-                          'Teste Rls',
+                          'Teste RPC',
                         ),
                       ),
                     ],

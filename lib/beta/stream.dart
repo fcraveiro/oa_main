@@ -1,9 +1,8 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oa_main/model/model_teste.dart';
+import 'package:oa_main/model/model_stream.dart';
 import 'package:oa_main/paginas/pacientes/controle_pacientes.dart';
 import 'package:oa_main/services/config.cfg';
 import 'package:supabase/supabase.dart';
@@ -144,29 +143,8 @@ class _FormTesteState extends State<Stream> {
                           },
                         );
                       }
-
-                      /*
-                      .hasData ||
-                          snapshot.hasError ||
-                          snapshot.data!.isEmpty) {
-                        return Container();
-                      }
-                      log('BINGO');
-                      for (var data in snapshot.data!) {
-                        challengeModelList.add(ClassTeste.fromJson(data));
-                      }
-                      return Text(challengeModelList.first.tesText1);
-                    
-                    */
                     }),
               ),
-
-/*
-                      for (var data in snapshot.data!) {
-                        challengeModelList.add(ClassTeste.fromJson(data));
-                      }
-                      return Text(challengeModelList.first.tesText1);
-*/
             ],
           ),
         ),

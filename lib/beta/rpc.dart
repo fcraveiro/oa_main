@@ -1,5 +1,166 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oa_main/services/conectar.dart';
+
+import '../model/model_votos.dart';
+
+class TesteRpc extends StatefulWidget {
+  const TesteRpc({Key? key}) : super(key: key);
+
+  @override
+  State<TesteRpc> createState() => _TesteRpcState();
+}
+
+var aa2 = 0;
+
+class _TesteRpcState extends State<TesteRpc> {
+  Conecta conectar = Conecta();
+
+  @override
+  void initState() {
+//    testa();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Remote Procedure Call'),
+        centerTitle: true,
+        backgroundColor: const Color(0xFF48426D),
+        actions: [
+          Center(child: Text(aa2.toString())),
+          const SizedBox(
+            width: 15,
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 70,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () async {
+                aa2 = await conectar.rpc6('Marcio');
+                setState(() {
+                  aa2;
+                });
+              },
+              child: Text(
+                'Votar Pedro',
+                style: GoogleFonts.montserratAlternates(
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () async {
+                aa2 = await conectar.rpc6('Paulo');
+                setState(() {
+                  aa2;
+                });
+              },
+              child: Text(
+                'Votar Paulo',
+                style: GoogleFonts.montserratAlternates(
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 7,
+                fixedSize: const Size(220, 40),
+                primary: const Color(0xFF48426D),
+                onSurface: Colors.black,
+              ),
+              onPressed: () async {
+                aa2 = await conectar.rpc6('Pedro');
+                setState(() {
+                  aa2;
+                });
+              },
+              child: Text(
+                'Votar Marcio',
+                style: GoogleFonts.montserratAlternates(
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            FutureBuilder(
+              future: conectar.getVotos(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<ClassVotos>> snapshot) {
+                if (snapshot.hasError) {
+                  return const Text('erro');
+                }
+                if (snapshot.hasData) {
+                  List<ClassVotos>? posts = snapshot.data;
+                  return SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 150,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        padding: const EdgeInsets.only(left: 15),
+                        itemCount: posts?.length,
+                        itemBuilder: (_, index) {
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                posts![index].votosNome.toString(),
+                                style: GoogleFonts.nunito(
+                                  fontSize: 16,
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 50,
+                                  child: Text(
+                                    posts[index].votosVotos.toString(),
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 16,
+                                    ),
+                                  )),
+                            ],
+                          );
+                        }),
+                  );
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+/*
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:oa_main/model/model_testerls.dart';
 import 'package:oa_main/services/conectar.dart';
 
@@ -182,3 +343,6 @@ class _TesteRlsState extends State<TesteRls> {
     );
   }
 }
+
+
+*/

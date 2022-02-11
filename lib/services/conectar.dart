@@ -1,6 +1,6 @@
 import 'dart:developer';
-import 'package:oa_main/model/model_teste.dart';
-import 'package:oa_main/model/model_testerls.dart';
+import 'package:oa_main/model/model_stream.dart';
+import 'package:oa_main/model/model_votos.dart';
 import 'package:oa_main/model/model_user.dart';
 import 'package:supabase/supabase.dart';
 import '/services/config.cfg';
@@ -169,55 +169,29 @@ class Conecta {
         .then((value) => log(value.error.toString()));
   }
 
-  Future<List<ClassTesteRls>> getRLS() async {
-//    log('Leu Rls');
+  Future<List<ClassVotos>> getVotos() async {
     final response = await client
-        .from('teste2')
+        .from('votos')
         .select()
-        .order('tes2Nome', ascending: true)
+        .order('votosNome', ascending: true)
         .execute();
-//    log(response.error.toString());
     if (response.error == null) {
       final dataList = response.data as List;
-      return (dataList.map((map) => ClassTesteRls.fromJson(map)).toList());
+      return (dataList.map((map) => ClassVotos.fromJson(map)).toList());
     }
-//    log('Error fetching notes: ${response.error!.message}');
     return [];
   }
 
-  rpc1() async {
-    final response = await client.rpc('vote2').execute();
-    return response;
-  }
-
-  rpc2() async {
-    final response = await client.rpc('vote1').execute();
-    return response;
-  }
-
-  rpc3() async {
-    final response = await client.rpc('vote3').execute();
-    return response;
-  }
-
-  rpc4(int valor) async {
+  rpc6(String nome) async {
     final response =
-        await client.rpc('vote4', params: {'valor': valor}).execute();
-    log(response.count.toString());
-    log(response.error.toString());
-    log(response.status.toString());
+        await client.rpc('votos', params: {'nome': nome}).execute();
     log(response.data.toString());
-    log(response.toString());
-    return response;
+    return response.data;
   }
+}
 
-  rpc5() async {
-    final response = await client.rpc('teste1').execute();
 //    log('Retorno Count: ${response.count.toString()}');
 //    log('Retorno Error: ${response.error.toString()}');
 //    log('Retorno Status: ${response.status.toString()}');
 //    log('Retorno Data: ${response.data.toString()}');
 //    log('Retorno Response: ${response.toString()}');
-    return response.data;
-  }
-}

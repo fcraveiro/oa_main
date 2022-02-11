@@ -57,7 +57,7 @@ class _TesteRpcState extends State<TesteRpc> {
                 });
               },
               child: Text(
-                'Votar Pedro',
+                'Votar Marcio',
                 style: GoogleFonts.montserratAlternates(
                   fontSize: 16,
                 ),
@@ -97,7 +97,7 @@ class _TesteRpcState extends State<TesteRpc> {
                 });
               },
               child: Text(
-                'Votar Marcio',
+                'Votar Pedro',
                 style: GoogleFonts.montserratAlternates(
                   fontSize: 16,
                 ),

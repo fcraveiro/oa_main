@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:oa_main/beta/encrypt.dart';
+import 'package:oa_main/beta/existe.dart';
 import 'package:oa_main/beta/picker3.dart';
 import 'package:oa_main/beta/profile.dart';
 import 'package:oa_main/beta/profile2.dart';
@@ -113,6 +115,16 @@ rotas() {
     GetPage(
       name: '/rpc/',
       page: () => const TesteRpc(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/encrypt/',
+      page: () => const Encrypt(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/existe/',
+      page: () => const Existe(),
       transition: Transition.zoom,
     ),
   ];

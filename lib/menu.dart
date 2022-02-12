@@ -191,6 +191,15 @@ class _MenuState extends State<Menu> {
                           'Teste RPC',
                         ),
                       ),
+                      ElevatedButton(
+                        style: estilo2,
+                        onPressed: () {
+                          Get.toNamed("/existe/");
+                        },
+                        child: texto(
+                          'Existe',
+                        ),
+                      ),
                     ],
                   ),
                   Column(
@@ -239,6 +248,15 @@ class _MenuState extends State<Menu> {
                         },
                         child: texto(
                           'Picker & Crooper',
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: estilo2,
+                        onPressed: () {
+                          Get.toNamed("/encrypt/");
+                        },
+                        child: texto(
+                          'Encrypt',
                         ),
                       ),
                     ],

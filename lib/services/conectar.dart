@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:oa_main/model/model_encrypt.dart';
 import 'package:oa_main/model/model_stream.dart';
 import 'package:oa_main/model/model_votos.dart';
 import 'package:oa_main/model/model_user.dart';
@@ -188,6 +189,28 @@ class Conecta {
     log(response.data.toString());
     return response.data;
   }
+
+  Future<List<ClassEncrypt>> getEncrypt() async {
+    final response = await client
+        .from('encrypt')
+        .select()
+        .order('encNome', ascending: true)
+        .execute();
+    if (response.error == null) {
+      final dataList = response.data as List;
+      return (dataList.map((map) => ClassEncrypt.fromJson(map)).toList());
+    }
+    return [];
+  }
+
+  rpc7(String nome) async {
+    final response =
+        await client.rpc('registros', params: {'nome': 'teste'}).execute();
+    if (response.data == null) {
+      return 0;
+    }
+    return response.data;
+  }
 }
 
 //    log('Retorno Count: ${response.count.toString()}');
@@ -195,3 +218,7 @@ class Conecta {
 //    log('Retorno Status: ${response.status.toString()}');
 //    log('Retorno Data: ${response.data.toString()}');
 //    log('Retorno Response: ${response.toString()}');
+//    log(response.data.toString());
+//    log(response.error.toString());
+//    log(response.status.toString());
+

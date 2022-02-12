@@ -55,6 +55,17 @@ class _PacientesState extends State<Pacientes> {
       fotoAtual = 'regina';
     }
 
+    log(Get.size.toString());
+    log(Get.currentRoute.toString());
+    log(Get.previousRoute.toString());
+    log(Get.key.toString());
+    log(Get.locale.toString());
+//    Get.clearRouteTree();
+    log(Get.arguments.toString());
+    log(Get.engine.toString());
+    log(Get.deviceLocale.toString());
+    log(Get.previousRoute.toString());
+
     lista = [];
     limpaPesquisa();
     lerAgora();

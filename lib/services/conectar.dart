@@ -211,6 +211,12 @@ class Conecta {
     }
     return response.data;
   }
+
+  rpc8(String nome) async {
+    final response =
+        await client.rpc('temregistro2', params: {'nome': nome}).execute();
+    return response.data;
+  }
 }
 
 //    log('Retorno Count: ${response.count.toString()}');
@@ -218,6 +224,9 @@ class Conecta {
 //    log('Retorno Status: ${response.status.toString()}');
 //    log('Retorno Data: ${response.data.toString()}');
 //    log('Retorno Response: ${response.toString()}');
+//    log(response.data.toString());
+//    log(response.error.toString());
+//    log(response.status.toString());
 //    log(response.data.toString());
 //    log(response.error.toString());
 //    log(response.status.toString());

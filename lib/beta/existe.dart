@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oa_main/services/conectar.dart';
@@ -10,6 +12,7 @@ class Existe extends StatefulWidget {
 }
 
 var aa2 = 0;
+bool jaTem = false;
 
 class _ExisteState extends State<Existe> {
   Conecta conectar = Conecta();
@@ -53,6 +56,8 @@ class _ExisteState extends State<Existe> {
                 setState(() {
                   aa2;
                 });
+                jaTem = await conectar.rpc8('Abgail Mendes');
+                log(jaTem.toString());
               },
               child: Text(
                 'Registros Encontrados : ${aa2.toString()}',

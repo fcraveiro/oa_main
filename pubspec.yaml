@@ -40,6 +40,7 @@ dependencies:
   #image_downloader: ^0.31.0
   image_cropper: ^1.4.1
   encrypt: ^5.0.1
+  battery_plus: ^2.1.1
 
 dev_dependencies:
 

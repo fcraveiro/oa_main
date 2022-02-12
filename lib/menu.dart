@@ -259,6 +259,15 @@ class _MenuState extends State<Menu> {
                           'Encrypt',
                         ),
                       ),
+                      ElevatedButton(
+                        style: estilo2,
+                        onPressed: () {
+                          Get.toNamed("/bateria/");
+                        },
+                        child: texto(
+                          'Bateria',
+                        ),
+                      ),
                     ],
                   ),
                 ],

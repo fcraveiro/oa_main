@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:oa_main/beta/bateria.dart';
 import 'package:oa_main/beta/encrypt.dart';
 import 'package:oa_main/beta/existe.dart';
 import 'package:oa_main/beta/picker3.dart';
@@ -125,6 +126,11 @@ rotas() {
     GetPage(
       name: '/existe/',
       page: () => const Existe(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/bateria/',
+      page: () => const Bateria(),
       transition: Transition.zoom,
     ),
   ];

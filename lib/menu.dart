@@ -53,7 +53,7 @@ class _MenuState extends State<Menu> {
 
   espaco() {
     return const SizedBox(
-      height: 20,
+      height: 15,
     );
   }
 
@@ -65,42 +65,10 @@ class _MenuState extends State<Menu> {
         title: const Text('Menu'),
         centerTitle: true,
         backgroundColor: const Color(0xFF48426D),
-        actions: [
-          Row(
-            children: const [
-/*
-              GestureDetector(
-                onTap: () => {},
-                child: Container(
-                  width: 41,
-                  height: 38,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        12,
-                      ),
-                      image: DecorationImage(
-                        image: ExactAssetImage('assets/imagens/$fotoAtual.png'),
-                        fit: BoxFit.cover,
-                      ),
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 1,
-                      )),
-                ),
-              ),
-
-              */
-              SizedBox(
-                width: 17,
-              ),
-            ],
-          )
-        ],
       ),
       body: Center(
         child: Column(
           children: [
-            espaco(),
             espaco(),
             ElevatedButton(
               style: estilo1,
@@ -198,6 +166,15 @@ class _MenuState extends State<Menu> {
                         },
                         child: texto(
                           'Existe',
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: estilo2,
+                        onPressed: () {
+                          Get.toNamed("/pagina1/");
+                        },
+                        child: texto(
+                          'Som',
                         ),
                       ),
                     ],

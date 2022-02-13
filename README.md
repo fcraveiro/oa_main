@@ -55,6 +55,12 @@ Flutter (Channel stable, 2.10.0, locale pt-BR)
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153119479-9accea75-1a82-4c73-b061-25651e294e20.png" style="width: 290px height: 500px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153119468-d20a0349-4394-4f96-8a13-bd44253b9f87.png" style="width: 290px height: 500px;" /></td>
 </tr>
+		<tr>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153734775-62c34da6-0d8f-45c0-b797-ae8cf38a9003.png" style="width: 290px height: 500px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153734765-a469f399-cdc6-4cb9-b906-97cbfb1861e9.png" style="width: 290px height: 500px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153734761-2978bced-3239-45d8-a9b8-c56f85245d14.png" style="width: 290px height: 500px;" /></td>
+</tr>
+
 	</tbody>
 </table>
 

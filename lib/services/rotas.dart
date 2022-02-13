@@ -2,6 +2,9 @@ import 'package:get/get.dart';
 import 'package:oa_main/beta/bateria.dart';
 import 'package:oa_main/beta/encrypt.dart';
 import 'package:oa_main/beta/existe.dart';
+import 'package:oa_main/beta/pagina1.dart';
+import 'package:oa_main/beta/pagina2.dart';
+import 'package:oa_main/beta/pagina3.dart';
 import 'package:oa_main/beta/picker3.dart';
 import 'package:oa_main/beta/profile.dart';
 import 'package:oa_main/beta/profile2.dart';
@@ -131,6 +134,21 @@ rotas() {
     GetPage(
       name: '/bateria/',
       page: () => const Bateria(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/pagina1/',
+      page: () => const Pagina1(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/pagina2/',
+      page: () => const Pagina2(),
+      transition: Transition.zoom,
+    ),
+    GetPage(
+      name: '/pagina3/',
+      page: () => const Pagina3(),
       transition: Transition.zoom,
     ),
   ];

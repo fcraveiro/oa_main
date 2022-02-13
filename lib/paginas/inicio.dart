@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oa_main/beta/pagina1.dart';
+import 'package:oa_main/beta/pagina2.dart';
+import 'package:quick_actions/quick_actions.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({Key? key}) : super(key: key);
@@ -23,12 +26,44 @@ List fotos = [
 ];
 
 class _InicioState extends State<Inicio> {
+  final QuickActions quickActions = const QuickActions();
+
   @override
   void initState() {
     log('Entrou tela Inicial');
     if (box.read('dentistaAtual') == null) {
       box.write('dentistaAtual', 1);
     }
+
+    quickActions.setShortcutItems([
+      const ShortcutItem(
+        type: 'pacientes',
+        localizedTitle: 'Pacientes',
+        icon: 'pacientes',
+      ),
+      const ShortcutItem(
+        type: 'addpaciente',
+        localizedTitle: 'Add Paciente',
+        icon: 'addpaciente',
+      ),
+      const ShortcutItem(
+        type: 'foto',
+        localizedTitle: 'Foto',
+        icon: 'foto',
+      ),
+    ]);
+    quickActions.initialize((type) {
+      if (type == 'pacientes') {
+        Get.toNamed("/pacientes/");
+      }
+      if (type == 'addpaciente') {
+        Get.toNamed("/addpaciente/");
+      }
+      if (type == 'foto') {
+        Get.toNamed("/foto/");
+      }
+    });
+
     super.initState();
   }
 

@@ -21,9 +21,7 @@ Desenvolvido em :</br>
 
 Flutter (Channel stable, 2.10.0, locale pt-BR)
 
-
 </br>
-
 <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:650px;">
 	<tbody>
 		<tr>
@@ -60,7 +58,6 @@ Flutter (Channel stable, 2.10.0, locale pt-BR)
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153734765-a469f399-cdc6-4cb9-b906-97cbfb1861e9.png" style="width: 290px height: 500px;" /></td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/153734761-2978bced-3239-45d8-a9b8-c56f85245d14.png" style="width: 290px height: 500px;" /></td>
 </tr>
-
 	</tbody>
 </table>
 

@@ -1,6 +1,6 @@
 // ignore_for_file: unnecessary_const
 
-import 'package:assets_audio_player/assets_audio_player.dart';
+//import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 class Pagina1 extends StatefulWidget {
@@ -11,7 +11,7 @@ class Pagina1 extends StatefulWidget {
 }
 
 class _Pagina1State extends State<Pagina1> {
-  final assetsAudioPlayer = AssetsAudioPlayer();
+//  final assetsAudioPlayer = AssetsAudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +59,12 @@ class _Pagina1State extends State<Pagina1> {
   }
 
   somPlay() async {
-    await assetsAudioPlayer.open(
-      Audio("assets/audios/som.mp3"),
-    );
+//    await assetsAudioPlayer.open(
+//      Audio("assets/audios/som.mp3"),
+//    );
   }
 
   somStop() async {
-    await assetsAudioPlayer.stop();
+//    await assetsAudioPlayer.stop();
   }
 }

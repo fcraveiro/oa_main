@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:oa_main/services/config.cfg';
+import 'package:supabase/supabase.dart';
 
 class Picker3 extends StatefulWidget {
   const Picker3({Key? key}) : super(key: key);
@@ -13,7 +15,13 @@ class Picker3 extends StatefulWidget {
   _Picker3State createState() => _Picker3State();
 }
 
+var idFoto = '';
+File pathFoto = '' as File;
+File pathThumbs = '' as File;
+
 class _Picker3State extends State<Picker3> {
+  SupabaseClient cliente = SupabaseClient(supabaseUrl, supabaseKey);
+
   XFile? _image;
 
   @override
@@ -104,15 +112,20 @@ class _Picker3State extends State<Picker3> {
   void _handleImage({required ImageSource source}) async {
     Navigator.pop(context);
     XFile? imageFile = await ImagePicker().pickImage(source: source);
+    pathFoto = File(imageFile!.path);
+    gravaFoto(pathFoto);
 
-    if (imageFile != null) {
-      imageFile = await _cropImage(imageFile: imageFile);
-      setState(() {
-        _image = imageFile;
-      });
-    }
+//    if (imageFile != null) {
+//      imageFile = await _cropImage(imageFile: imageFile);
+//      setState(() {
+//        _image = imageFile;
+//      });
+
+//    log('foto ${File(_image!.path)}');
+//    }
   }
 
+/*
   Future<XFile?> _cropImage({required XFile imageFile}) async {
     File? croppedImage = await ImageCropper.cropImage(
         sourcePath: imageFile.path,
@@ -146,5 +159,20 @@ class _Picker3State extends State<Picker3> {
     }
     log(croppedImage.path.toString());
     return XFile(croppedImage.path);
+  }
+*/
+  gravaFoto(File pathFoto) async {
+    DateTime now = DateTime.now();
+    idFoto = now.toString() + '.jpg';
+    var nomeDaFoto = 'nomedafoto.jpg';
+    log('Gravar : $pathFoto');
+    await cliente.storage.from('fotos').upload(nomeDaFoto, pathFoto).then(
+      (value) {
+        var response = cliente.storage.from('fotos').getPublicUrl(nomeDaFoto);
+        var pathServer = response.data.toString();
+        // ignore: avoid_print
+        log('Path Servidor : $pathServer');
+      },
+    );
   }
 }

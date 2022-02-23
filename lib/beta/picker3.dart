@@ -114,18 +114,14 @@ class _Picker3State extends State<Picker3> {
     XFile? imageFile = await ImagePicker().pickImage(source: source);
     pathFoto = File(imageFile!.path);
     gravaFoto(pathFoto);
+    imageFile = await _cropImage(imageFile: imageFile);
+    setState(() {
+      _image = imageFile;
+    });
 
-//    if (imageFile != null) {
-//      imageFile = await _cropImage(imageFile: imageFile);
-//      setState(() {
-//        _image = imageFile;
-//      });
-
-//    log('foto ${File(_image!.path)}');
-//    }
+    log('foto ${File(_image!.path)}');
   }
 
-/*
   Future<XFile?> _cropImage({required XFile imageFile}) async {
     File? croppedImage = await ImageCropper.cropImage(
         sourcePath: imageFile.path,
@@ -160,7 +156,7 @@ class _Picker3State extends State<Picker3> {
     log(croppedImage.path.toString());
     return XFile(croppedImage.path);
   }
-*/
+
   gravaFoto(File pathFoto) async {
     DateTime now = DateTime.now();
     idFoto = now.toString() + '.jpg';
